@@ -1,0 +1,8 @@
+app/components
+node_modules
+app/css/*
+.sass-cache
+dist
+app/*.html
+app/js/trado-doc.js
+*.DS_Store
