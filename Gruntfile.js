@@ -162,9 +162,9 @@ module.exports = function (grunt) {
                     '<%= trado_doc.app %>/components/normalize-css/normalize.css',
                     '<%= trado_doc.app %>/components/animate.css/animate.min.css',
                     '<%= trado_doc.app %>/components/bootstrap/dist/css/bootstrap.min.css',
-                    '<%= trado_doc.app %>/css/application.css'
+                    '<%= trado_doc.app %>/css/trado-doc.css'
                 ],
-                dest: '<%= trado_doc.app %>/css/application.css'
+                dest: '<%= trado_doc.app %>/css/trado-doc.css'
             }
         },
         uglify: {
@@ -196,7 +196,7 @@ module.exports = function (grunt) {
                     banner: '/* Compiled Trado documentation stylesheet assets */'
                 },
                 files: {
-                    '<%= trado_doc.dist %>/css/trado-doc.css': ['<%= trado_doc.dist %>/css/application.css']
+                    '<%= trado_doc.dist %>/css/trado-doc.css': ['<%= trado_doc.dist %>/css/trado-doc.css']
                 }
             }
         }
