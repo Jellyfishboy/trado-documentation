@@ -7,18 +7,18 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/trado-doc.css">
+        <script src="//use.typekit.net/pti0yvx.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
         <link rel="stylesheet" href="components/icomoon/dist/css/style.css" media="screen">
         <script src="components/modernizr/modernizr.js"></script>
     </head>
     <body>
-        <div class="mp-pusher" id="mp-pusher">
-            {{partial 'header'}}
+        {{partial 'header'}}
 
-            <div class="main">    
-                {{> body }}
-            </div>
-            {{partial 'footer'}}
+        <div class="main">    
+            {{> body }}
         </div>
+        {{partial 'footer'}}
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
         <script>window.jQuery || document.write('<script src="components/jquery/dist/jquery.min.js"><\/script>')</script>
         <script src="//localhost:35729/livereload.js"></script>

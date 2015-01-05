@@ -1,0 +1,19 @@
+.btn
+{
+    background:$green;
+    text-transform: uppercase;
+    padding:12px 24px;
+    font-family: "museo-sans",sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    border-color: $dark-green;
+    color: #fff;
+    letter-spacing: 0.5px;
+
+    &:hover
+    {
+        background: none;
+        color: $dark-green;
+        border-color: $dark-green;
+    }
+}

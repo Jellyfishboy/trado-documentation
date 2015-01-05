@@ -1,4 +1,14 @@
 @import "compass/css3";
 
+// Variables
+$green: #39b54a;
+$dark-green: #009245;
+$blue: #a8d6ff;
+$dark-blue: #0071bc;
+
 @import "base";
 @import "1140";
+@import "buttons";
+@import "header";
+@import "footer";
+@import "home";
