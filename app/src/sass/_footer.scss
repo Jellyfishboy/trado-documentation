@@ -2,9 +2,47 @@ footer
 {
     background-color: #40454d;
     color: rgba(255,255,255, 0.5);
+    padding:50px 0;
+    font-size:0.9em;
 
     h3
     {
+        margin-top: 0;
         color: rgba(255,255,255, 1);
+        font-size: 1.5em;
+    }
+
+    .sixcol
+    {
+        div, img
+        {
+            float:left;
+        }
+        div
+        {
+            p:last-child
+            {
+                margin:0;
+            }
+        }
+        img
+        {
+            margin-right:20px;
+            height:50px;
+            width:50px;
+            float:left;
+        }
+    }
+
+    ul
+    {
+        list-style-type: none;
+        margin:0;
+        padding: 0;
+
+        li
+        {
+
+        }
     }
 }
