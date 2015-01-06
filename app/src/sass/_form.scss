@@ -2,7 +2,7 @@ form
 {
     input[type="text"]
     {
-        background: rgba(168,214,255,0.3);
+        background: rgba(168,214,255,0.1);
         outline:none;
         border:1px solid rgba(0,133,188,0.5);
         @include border-radius(4px);
@@ -10,6 +10,14 @@ form
         margin-right: 15px;
         text-transform: uppercase;
         color: $dark-blue;
+        @include transition-property(background);
+        @include transition-duration(0.4s);
+        @include transition-timing-function(linear);
+
+        &:focus
+        {
+            background: rgba(255,255,255,0.5);
+        }
     }
     input[type="submit"]
     {
