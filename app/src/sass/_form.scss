@@ -1,0 +1,47 @@
+form
+{
+    input[type="text"]
+    {
+        background: rgba(168,214,255,0.3);
+        outline:none;
+        border:1px solid rgba(0,133,188,0.5);
+        @include border-radius(4px);
+        padding:10px 7px;
+        margin-right: 15px;
+        text-transform: uppercase;
+        color: $dark-blue;
+    }
+    input[type="submit"]
+    {
+        border: 1px solid rgba(0,133,188,0.5);
+        background: none;
+        @include border-radius(4px);
+        padding:10px 15px;
+        text-transform: uppercase;
+        color: $dark-blue;
+        font-weight: 500;
+
+        &:hover
+        {
+            background-color: $dark-blue;
+            color:#fff;
+        }
+    }
+    ::-webkit-input-placeholder
+    {
+        color:$dark-blue;
+        @include opacity(0.4);
+    }
+    :-moz-placeholder
+    {
+        color: $dark-blue;
+    }
+    ::-moz-placeholder
+    {
+        color: $dark-blue;
+    }
+    :-ms-input-placeholder
+    {
+        color: $dark-blue;
+    }
+}
