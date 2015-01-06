@@ -1,0 +1,25 @@
+@media handheld, only screen and (max-width: 770px) 
+{
+    body
+    {
+        .content-section
+        {
+            .sixcol
+            {
+                text-align: center !important;
+            }
+        }
+        img.mobile
+        {
+            display: inline-block;
+        }
+        .mobile
+        {
+            display: block;
+        }
+        .desktop
+        {
+            display: none;
+        }
+    }
+}
