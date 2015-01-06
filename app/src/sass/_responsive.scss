@@ -2,6 +2,17 @@
 {
     body
     {
+        #hero
+        {
+            h1
+            {
+                width:75%;
+            }
+            h2
+            {
+                width:65%;
+            }
+        }
         .content-section
         {
             .sixcol
@@ -20,6 +31,17 @@
         .desktop
         {
             display: none;
+        }
+        footer
+        {
+            .threecol
+            {
+                float:left !important;
+            }
+            .sixcol
+            {
+                margin-top: 20px;
+            }
         }
     }
 }
