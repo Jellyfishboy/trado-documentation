@@ -13,6 +13,7 @@ form
         @include transition-property(background);
         @include transition-duration(0.4s);
         @include transition-timing-function(linear);
+        min-width: 220px;
 
         &:focus
         {
@@ -28,6 +29,7 @@ form
         text-transform: uppercase;
         color: $dark-blue;
         font-weight: 500;
+        outline:none;
 
         &:hover
         {
