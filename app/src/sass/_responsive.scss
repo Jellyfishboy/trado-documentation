@@ -12,6 +12,10 @@
             {
                 width:65%;
             }
+            form
+            {
+                padding:0 10px;
+            }
         }
         .content-section
         {
@@ -41,6 +45,19 @@
             .sixcol
             {
                 margin-top: 20px;
+            }
+        }
+    }
+}
+@media handheld, only screen and (max-width: 770px) 
+{
+    body
+    {
+        form
+        {
+            input[type="text"]
+            {
+                margin-bottom: 15px;
             }
         }
     }
