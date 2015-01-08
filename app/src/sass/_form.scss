@@ -61,6 +61,15 @@ form
 .beta-request-error, .beta-request-already-subscribed, .beta-request-result
 {
     display: none;
+
+    i
+    {
+        color: $dark-blue;
+    }
+    p
+    {
+        margin-bottom: 0;
+    }
 }
 .beta-request-error
 {

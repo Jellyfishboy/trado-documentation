@@ -5,7 +5,7 @@ $(document).ready(function()
         callback: ajaxChimpCallback
       });
       $('.beta-request-form').submit(function() {
-        // ga('send', 'event', 'invite', 'request');
+        ga('send', 'event', 'invite', 'request');
         $('.beta-request-btn').html('<i class=\'fa fa-spinner fa-spin\'></i>');
         $('.beta-request-error').hide();
         $('.beta-request-already-subscribed').hide();

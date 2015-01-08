@@ -14,11 +14,9 @@
     "tests"
   ],
   "dependencies": {
-    "icomoon": "~0.0.1",
     "normalize-css": "~3.0.1",
     "jquery": "~2.1.1",
     "bootstrap": "3.0.2",
-    "animate.css": "~3.2.0",
     "modernizr": "~2.8.3",
     "ajaxchimp": "~1.3.0",
     "font-awesome": "~4.2.0"

@@ -162,7 +162,6 @@ module.exports = function (grunt) {
                 },
                 src: [
                     '<%= trado_promo.app %>/components/normalize-css/normalize.css',
-                    '<%= trado_promo.app %>/components/animate.css/animate.min.css',
                     '<%= trado_promo.app %>/components/bootstrap/dist/css/bootstrap.min.css',
                     '<%= trado_promo.app %>/css/trado-promo.css'
                 ],
