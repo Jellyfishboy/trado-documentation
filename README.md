@@ -1,4 +1,4 @@
-trado-documentation
+trado-promo-design
 ===================
 
-Documentation website for Trado ecommerce platform: https://github.com/Jellyfishboy/trado
+Design for the Trado promotional site: https://github.com/Jellyfishboy/trado

@@ -16,32 +16,32 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('assemble');
     require('time-grunt')(grunt);
 
-    var tradoDocConfig = {
+    var tradoPromoConfig = {
         app: 'app',
         dist: 'dist'
     };
 
     grunt.initConfig({
-        trado_doc: tradoDocConfig,
+        trado_promo: tradoPromoConfig,
         watch: {
             options: {
                 nospawn: true,
                 livereload: true
             },
             concatJavascript: {
-                files: ['<%= trado_doc.app %>/js/{,*/}*.js'],
+                files: ['<%= trado_promo.app %>/js/{,*/}*.js'],
                 tasks: ['concat:javascripts']
             },
             compass: {
-                files: ['<%= trado_doc.app %>/src/sass/{,*/}*.{scss,sass}'],
+                files: ['<%= trado_promo.app %>/src/sass/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server', 'concat:stylesheets']
             },
             assemble: {
-                files: ['<%= trado_doc.app %>/layouts/*.hbs', 'app/pages/*.hbs', 'app/partials/**/*.hbs'],
+                files: ['<%= trado_promo.app %>/layouts/*.hbs', 'app/pages/*.hbs', 'app/partials/**/*.hbs'],
                 tasks: ['assemble']
             },
             // img: {
-            //     files: ['<%= trado_doc.app %>/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'],
+            //     files: ['<%= trado_promo.app %>/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'],
             //     options: {
             //         livereload: true
             //     }
@@ -69,28 +69,28 @@ module.exports = function (grunt) {
                 files: [{
                     dot: true,
                     src: [
-                        '<%= trado_doc.app %>/*.html',
-                        '<%= trado_doc.app %>/css',
-                        '<%= trado_doc.app %>/js/trado-doc.js',
-                        '<%= trado_doc.dist %>/*',
-                        '!<%= trado_doc.dist %>/.git*'
+                        '<%= trado_promo.app %>/*.html',
+                        '<%= trado_promo.app %>/css',
+                        '<%= trado_promo.app %>/js/trado-promo.js',
+                        '<%= trado_promo.dist %>/*',
+                        '!<%= trado_promo.dist %>/.git*'
                     ]
                 }]
             },
             server: {
                 files: [{
                     src: [
-                        '<%= trado_doc.app %>/*.html',
-                        '<%= trado_doc.app %>/css',
-                        '<%= trado_doc.app %>/js/trado-doc.js',
-                        '<%= trado_doc.dist %>/*'
+                        '<%= trado_promo.app %>/*.html',
+                        '<%= trado_promo.app %>/css',
+                        '<%= trado_promo.app %>/js/trado-promo.js',
+                        '<%= trado_promo.dist %>/*'
                     ]
                 }]
             },
             css: {
                 files: [{
                     src: [
-                        '<%= trado_doc.dist %>/css/application.css'
+                        '<%= trado_promo.dist %>/css/trado-promo.css'
                     ]
                 }]
             }
@@ -100,25 +100,26 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= trado_doc.app %>',
-                    dest: '<%= trado_doc.dist %>',
+                    cwd: '<%= trado_promo.app %>',
+                    dest: '<%= trado_promo.dist %>',
                     src: [
                         '*.{ico,png,txt}',
                         'components/**/*',
-                        '*.html'
+                        '*.html',
+                        'img/*'
                     ]
                 }]
             },
             styles: {
                 expand: true,
-                cwd: '<%= trado_doc.app %>/css',
-                dest: '<%= trado_doc.dist %>/css/',
+                cwd: '<%= trado_promo.app %>/css',
+                dest: '<%= trado_promo.dist %>/css/',
                 src: '{,*/}*.css'
             },
             javascripts: {
                 expand: true,
-                cwd: '<%= trado_doc.app %>/js',
-                dest: '<%= trado_doc.dist %>/js/',
+                cwd: '<%= trado_promo.app %>/js',
+                dest: '<%= trado_promo.dist %>/js/',
                 src: '*.js'
             }
         },
@@ -129,10 +130,11 @@ module.exports = function (grunt) {
         },
         compass: {
             options: {
-                sassDir: '<%= trado_doc.app %>/src/sass',
-                cssDir: '<%= trado_doc.app %>/css',
+                sassDir: '<%= trado_promo.app %>/src/sass',
+                cssDir: '<%= trado_promo.app %>/css',
                 outputStyle: 'nested',
-                imagesDir: '<%= trado_doc.app %>/img',
+                imagesDir: '<%= trado_promo.app %>/img',
+                imagesPath: '/img',
                 httpGeneratedImagesPath: '/img',
                 httpImagesPath: '/img'
             },
@@ -150,21 +152,21 @@ module.exports = function (grunt) {
                   separator: ';'
                 },
                 src: [
-
+                    '<%= trado_promo.app %>/components/ajaxchimp/jquery.ajaxchimp.js'
                 ],
-                dest: '<%= trado_doc.app %>/js/trado-doc.js',
+                dest: '<%= trado_promo.app %>/js/trado-promo.js',
             },
             stylesheets: {
                 options: {
                     separator: ''
                 },
                 src: [
-                    '<%= trado_doc.app %>/components/normalize-css/normalize.css',
-                    '<%= trado_doc.app %>/components/animate.css/animate.min.css',
-                    '<%= trado_doc.app %>/components/bootstrap/dist/css/bootstrap.min.css',
-                    '<%= trado_doc.app %>/css/trado-doc.css'
+                    '<%= trado_promo.app %>/components/normalize-css/normalize.css',
+                    '<%= trado_promo.app %>/components/animate.css/animate.min.css',
+                    '<%= trado_promo.app %>/components/bootstrap/dist/css/bootstrap.min.css',
+                    '<%= trado_promo.app %>/css/trado-promo.css'
                 ],
-                dest: '<%= trado_doc.app %>/css/trado-doc.css'
+                dest: '<%= trado_promo.app %>/css/trado-promo.css'
             }
         },
         uglify: {
@@ -173,8 +175,8 @@ module.exports = function (grunt) {
             },
             server: {
                 files: {
-                    '<%= trado_doc.app %>/js/application.js': [ '<%= trado_doc.app %>/js/application.js' ],
-                    '<%= trado_doc.app %>/js/trado-doc.js': [ '<%= trado_doc.app %>/js/trado-doc.js' ]
+                    '<%= trado_promo.app %>/js/application.js': [ '<%= trado_promo.app %>/js/application.js' ],
+                    '<%= trado_promo.app %>/js/trado-promo.js': [ '<%= trado_promo.app %>/js/trado-promo.js' ]
                 }
             }
         },
@@ -193,10 +195,10 @@ module.exports = function (grunt) {
         cssmin: {
             add_banner: {
                 options: {
-                    banner: '/* Compiled Trado documentation stylesheet assets */'
+                    banner: '/* Compiled Trado promotional stylesheet assets */'
                 },
                 files: {
-                    '<%= trado_doc.dist %>/css/trado-doc.css': ['<%= trado_doc.dist %>/css/trado-doc.css']
+                    '<%= trado_promo.dist %>/css/trado-promo.css': ['<%= trado_promo.dist %>/css/trado-promo.css']
                 }
             }
         }
@@ -222,7 +224,6 @@ module.exports = function (grunt) {
         'assemble',
         'copy:styles',
         'cssmin',
-        'clean:css',
         'uglify:server',
         'copy:javascripts',
         'copy:dist'

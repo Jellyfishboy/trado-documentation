@@ -1,12 +1,13 @@
 #hero-image
 {
-    background:url('/img/slide.jpg');
+    background: url('/img/slide.jpg');
     background-repeat:no-repeat;
     background-size:cover;
     position: fixed;
     width:100%;
     z-index:0;
     height:100%;
+    top:0;
 }
 
 #hero
