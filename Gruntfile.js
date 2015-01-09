@@ -175,8 +175,8 @@ module.exports = function (grunt) {
             },
             server: {
                 files: {
-                    '<%= trado_promo.app %>/js/application.js': [ '<%= trado_promo.app %>/js/application.js' ],
-                    '<%= trado_promo.app %>/js/trado-promo.js': [ '<%= trado_promo.app %>/js/trado-promo.js' ]
+                    '<%= trado_promo.dist %>/js/application.js': [ '<%= trado_promo.dist %>/js/application.js' ],
+                    '<%= trado_promo.dist %>/js/trado-promo.js': [ '<%= trado_promo.dist %>/js/trado-promo.js' ]
                 }
             }
         },
@@ -224,8 +224,8 @@ module.exports = function (grunt) {
         'assemble',
         'copy:styles',
         'cssmin',
-        'uglify:server',
         'copy:javascripts',
+        'uglify:server',
         'copy:dist'
     ]);
 };
