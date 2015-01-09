@@ -49,15 +49,25 @@
         }
     }
 }
-@media handheld, only screen and (max-width: 770px) 
+@media handheld, only screen and (max-width: 605px) 
 {
     body
     {
         form
         {
-            input[type="text"]
+            input[type="text"], input[type="email"]
             {
-                margin-bottom: 15px;
+                display: block;
+                margin:0 auto 15px; 
+            }
+        }
+        #hero
+        {
+            padding:150px 0;
+            
+            h1
+            {
+                font-size:2.5em;
             }
         }
     }
