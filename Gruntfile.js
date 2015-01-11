@@ -104,7 +104,6 @@ module.exports = function (grunt) {
                     dest: '<%= trado_promo.dist %>',
                     src: [
                         '*.{ico,png,txt}',
-                        'components/**/*',
                         '*.html',
                         'img/*'
                     ]
@@ -121,6 +120,20 @@ module.exports = function (grunt) {
                 cwd: '<%= trado_promo.app %>/js',
                 dest: '<%= trado_promo.dist %>/js/',
                 src: '*.js'
+            },
+            modernizr:
+            {
+                expand: true,
+                cwd: '<%= trado_promo.app %>/components/modernizr',
+                dest: '<%= trado_promo.dist %>/components/modernizr',
+                src: 'modernizr.js'
+            },
+            fontawesome:
+            {
+                expand: true,
+                cwd: '<%= trado_promo.app %>/components/font-awesome/fonts',
+                dest: '<%= trado_promo.dist %>/fonts',
+                src: '*'
             }
         },
         open: {
@@ -164,6 +177,7 @@ module.exports = function (grunt) {
                 src: [
                     '<%= trado_promo.app %>/components/normalize-css/normalize.css',
                     '<%= trado_promo.app %>/components/bootstrap/dist/css/bootstrap.min.css',
+                    '<%= trado_promo.app %>/components/font-awesome/css/font-awesome.min.css',
                     '<%= trado_promo.app %>/css/trado-promo.css'
                 ],
                 dest: '<%= trado_promo.app %>/css/trado-promo.css'
@@ -173,10 +187,11 @@ module.exports = function (grunt) {
             options: {
               mangle: true
             },
-            server: {
+            dist: {
                 files: {
                     '<%= trado_promo.dist %>/js/application.js': [ '<%= trado_promo.dist %>/js/application.js' ],
-                    '<%= trado_promo.dist %>/js/trado-promo.js': [ '<%= trado_promo.dist %>/js/trado-promo.js' ]
+                    '<%= trado_promo.dist %>/js/trado-promo.js': [ '<%= trado_promo.dist %>/js/trado-promo.js' ],
+                    '<%= trado_promo.dist %>/components/modernizr/modernizr.js' : ['<%= trado_promo.dist %>/components/modernizr/modernizr.js']
                 }
             }
         },
@@ -200,6 +215,28 @@ module.exports = function (grunt) {
                 files: {
                     '<%= trado_promo.dist %>/css/trado-promo.css': ['<%= trado_promo.dist %>/css/trado-promo.css']
                 }
+            }
+        },
+        cdnify: {
+            dist: {
+                options: {
+                    base: 'http://cdn0.trado.io/trado-promo/assets/',
+                    html: {
+                        'link[rel=icon]' : 'href'
+                    }
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'dist',
+                    src: '**/*.{css,html}',
+                    dest: 'dist'
+                }]
+            }
+        },
+        htmlbuild: {
+            dist: {
+                src: '<%= trado_promo.dist %>/index.html',
+                dest: '<%= trado_promo.dist %>/'
             }
         }
     });
@@ -225,7 +262,11 @@ module.exports = function (grunt) {
         'copy:styles',
         'cssmin',
         'copy:javascripts',
-        'uglify:server',
-        'copy:dist'
+        'copy:modernizr',
+        'copy:fontawesome',
+        'uglify:dist',
+        'copy:dist',
+        'cdnify:dist',
+        'htmlbuild:dist'
     ]);
 };
