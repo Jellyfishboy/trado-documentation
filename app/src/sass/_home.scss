@@ -51,6 +51,11 @@
     {
         margin-bottom:50px;
 
+        &#google-analytics
+        {
+            margin-bottom: 0;
+        }
+
         &:nth-child(odd)
         {
             .sixcol.last
@@ -80,13 +85,32 @@
 
         h2
         {
-            margin-top: 5px;
+            margin-top: 40px;
             line-height: 1.3em;
         }
 
         p
         {
             margin-bottom: 20px;
+        }
+    }
+    #delivery-background
+    {
+        margin-bottom:50px;
+        background: url('../img/gmap.png');
+        background-repeat: no-repeat;
+        background-position: center left;
+        min-height: 400px;
+
+        .content-section
+        {
+            margin-bottom: 0;
+            margin-top:50px;
+
+            .sixcol.last
+            {
+                text-align: left;
+            }
         }
     }
 }
