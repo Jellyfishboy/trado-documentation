@@ -56,33 +56,6 @@
             margin-bottom: 0;
         }
 
-        &:nth-child(odd)
-        {
-            .sixcol.last
-            {
-                text-align: center;
-            }
-        }
-
-        &:nth-child(even)
-        {
-            .sixcol
-            {
-                text-align: center;
-            }
-
-            .sixcol.last
-            {
-                text-align: left;
-            }
-        }
-
-
-        #soca-animation
-        {
-            height:350px;
-        }
-
         h2
         {
             margin-top: 40px;
@@ -94,13 +67,60 @@
             margin-bottom: 20px;
         }
     }
+
+    #cms-background
+    {
+        background: url('../img/cms-slide.png');
+        background-repeat: no-repeat;
+        background-position: center right;
+        min-height: 400px;
+        margin-bottom:50px;
+
+        .content-section
+        {
+            margin-bottom: 0;
+            margin-top:50px;
+
+            .sixcol.last
+            {
+                text-align: left;
+            }
+        }
+    }
+
+
     #delivery-background
     {
-        margin-bottom:50px;
         background: url('../img/gmap.png');
         background-repeat: no-repeat;
         background-position: center left;
         min-height: 400px;
+        margin-bottom:50px;
+
+        .content-section
+        {
+            margin-bottom: 0;
+            margin-top:50px;
+
+            .sixcol.last
+            {
+                text-align: left;
+            }
+        }
+    }
+
+    #theme-background
+    {
+        min-height: 400px;
+        position: relative;
+
+        img
+        {
+            position: absolute;
+            top:0px;
+            left:0px;
+            max-height: 600px;
+        }
 
         .content-section
         {
