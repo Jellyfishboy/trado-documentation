@@ -70,7 +70,7 @@
 
     #cms-background
     {
-        background: url('../img/cms-slide.png');
+        background: image-url('cms-slide.png');
         background-repeat: no-repeat;
         background-position: center right;
         min-height: 400px;
@@ -91,7 +91,7 @@
 
     #delivery-background
     {
-        background: url('../img/gmap.png');
+        background: image-url('gmap.png');
         background-repeat: no-repeat;
         background-position: center left;
         min-height: 400px;
