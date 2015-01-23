@@ -17,8 +17,15 @@
                 padding:0 10px;
             }
         }
+        #cms-background
+        {
+            background: none !important;
+            height: auto;
+        }
         .content-section
         {
+            margin-bottom: 0 !important;
+
             .sixcol
             {
                 text-align: center !important;

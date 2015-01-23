@@ -149,8 +149,9 @@ module.exports = function (grunt) {
                 imagesDir: '<%= trado_promo.app %>/img',
                 imagesPath: '<%= trado_promo.app %>/img',
                 httpGeneratedImagesPath: 'http://cdn1.trad.io/trado-promo/assets/img',
-                httpImagesPath: 'http://cdn1.trado.io/trado-promo/assets/img',
-                relative_assets: false
+                // httpImagesPath: 'http://cdn1.trado.io/trado-promo/assets/img',
+                httpImagesPath: '/img',
+                // relative_assets: false
             },
             dist: {
             },
