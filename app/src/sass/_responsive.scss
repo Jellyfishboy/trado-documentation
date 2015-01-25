@@ -17,11 +17,13 @@
                 padding:0 10px;
             }
         }
-        #cms-background
+        #cms-background, #delivery-background
         {
             background: none !important;
             height: auto;
+            margin-bottom: 0 !important;
         }
+
         .content-section
         {
             margin-bottom: 0 !important;
