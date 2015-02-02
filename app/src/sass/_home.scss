@@ -131,12 +131,19 @@
         .content-section
         {
             margin-bottom: 0;
-            margin-top:50px;
 
             .sixcol.last
             {
                 text-align: left;
             }
         }
+    }
+
+    #theme-mobile-background
+    {
+        background: image-url('theme-mobile.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        height:365px;
     }
 }
