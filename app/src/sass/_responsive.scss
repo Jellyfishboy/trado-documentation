@@ -1,20 +1,25 @@
-@media handheld, only screen and (max-width: 1160px) 
+@media handheld, only screen and (max-width: 1199px) 
 {
     body
     {
-        #google-analytics
+        #google-analytics-background
         {
+            position: relative;
+            min-height:350px;
+
             .sixcol.last
             {
-                height:333px;
-                position: relative;
-
                 img
                 {
-                    position: absolute;
-                    left:0;
-                    bottom:0;
-                }   
+                    display: none;
+                }
+            }
+            .tablet
+            {
+                display: block !important;
+                position: absolute;
+                right:20px;
+                bottom:0px;
             }
         }
     }
@@ -53,6 +58,27 @@
                 margin-top:40px !important;
             }
         }
+
+        #google-analytics-background
+        {
+            .tablet
+            {
+                right:0;
+            }
+        }
+    }
+}
+@media handheld, only screen and (max-width: 940px) 
+{
+    body
+    {
+        #google-analytics-background
+        {
+            .tablet
+            {
+                right:-30px;
+            }
+        }
     }
 }
 @media handheld, only screen and (max-width: 880px) 
@@ -62,6 +88,14 @@
         #cms-background
         {
             background-position: -80px center !important;
+        }
+
+        #google-analytics-background
+        {
+            .tablet
+            {
+                right:-90px;
+            }
         }
     }
 }
@@ -101,17 +135,6 @@
             margin-bottom: 0 !important;
         }
 
-        #google-analytics
-        {
-            .sixcol.last
-            {
-                img
-                {
-                    margin-top: 20px;
-                }
-            }
-        }
-
         #delivery-background
         {
             .content-section
@@ -124,6 +147,21 @@
         #delivery-mobile-background
         {
             margin-bottom:40px;
+        }
+
+        #google-analytics-background
+        {
+            .tablet
+            {
+                display:none !important;
+            }
+            .sixcol.last
+            {
+                img
+                {
+                    display: inline-block;
+                }
+            }
         }
 
         #theme-background

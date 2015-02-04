@@ -56,7 +56,22 @@
     {
         margin-bottom:50px;
 
-        &#google-analytics
+        h2
+        {
+            margin-top: 40px;
+            line-height: 1.3em;
+        }
+
+        p
+        {
+            margin-bottom: 20px;
+        }
+    }
+
+    #google-analytics-background
+    {
+
+        .content-section
         {
             margin-bottom: 0;
 
@@ -72,15 +87,9 @@
             }
         }
 
-        h2
+        .tablet
         {
-            margin-top: 40px;
-            line-height: 1.3em;
-        }
-
-        p
-        {
-            margin-bottom: 20px;
+            display: none;
         }
     }
 
