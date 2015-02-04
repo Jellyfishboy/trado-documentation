@@ -34,6 +34,16 @@
         }
     }
 }
+@media handheld, only screen and (max-width: 1150px) 
+{
+    body
+    {
+        #delivery-background
+        {
+            background: image-url('gmap-tablet.png') !important;
+        }
+    }
+}
 @media handheld, only screen and (max-width: 991px) 
 {
     body

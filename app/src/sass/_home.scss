@@ -89,6 +89,9 @@
 
         .tablet
         {
+            @include transition-property(right);
+            @include transition-timing-function(linear);
+            @include transition-duration(0.4s);
             display: none;
         }
     }
@@ -119,6 +122,9 @@
         background-position: center left;
         min-height: 400px;
         margin-bottom:50px;
+        @include transition-property(background);
+        @include transition-timing-function(linear);
+        @include transition-duration(0.4s);
 
         .content-section
         {
