@@ -73,20 +73,7 @@
         {
             .tablet
             {
-                right:0;
-            }
-        }
-    }
-}
-@media handheld, only screen and (max-width: 940px) 
-{
-    body
-    {
-        #google-analytics-background
-        {
-            .tablet
-            {
-                right:-30px;
+                right:-90px;
             }
         }
     }
@@ -98,14 +85,6 @@
         #cms-background
         {
             background-position: -80px center !important;
-        }
-
-        #google-analytics-background
-        {
-            .tablet
-            {
-                right:-90px;
-            }
         }
     }
 }

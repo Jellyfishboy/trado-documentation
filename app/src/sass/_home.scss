@@ -51,6 +51,10 @@
     position: relative;
     z-index:1;
     padding-top:50px;
+    -webkit-transform:translateZ(1px);
+    -moz-transform:translateZ(1px);
+    -o-transform:translateZ(1px);
+    transform:translateZ(1px);
 
     .content-section
     {
@@ -103,6 +107,9 @@
         background-position: right center;
         min-height: 400px;
         margin-bottom:50px;
+        @include transition-property(background-position);
+        @include transition-timing-function(linear);
+        @include transition-duration(0.4s);
 
         .content-section
         {
