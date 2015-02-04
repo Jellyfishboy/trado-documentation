@@ -5,8 +5,11 @@ footer
     padding:50px 0;
     font-size:0.9em;
     position: relative;
-    z-index:1;
-
+    -webkit-transform:translateZ(1px);
+    -moz-transform:translateZ(1px);
+    -o-transform:translateZ(1px);
+    transform:translateZ(1px);
+    
     h3
     {
         margin-top: 0;

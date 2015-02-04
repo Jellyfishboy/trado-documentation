@@ -12,7 +12,10 @@ $(document).ready(function() {
         $(".beta-request-error").hide(); 
         $(".beta-request-already-subscribed").hide();
     });
-    $(".first-name").first().focus();
+    if(!$('html').hasClass('touch'))
+    {
+        $(".first-name").first().focus();
+    };
 });
 jQuery.fn.capitalize = function() {
     return $(this).each(function(a, b) {
