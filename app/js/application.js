@@ -15,7 +15,9 @@ $(document).ready(function() {
     if(!$('html').hasClass('touch'))
     {
         $(".first-name").first().focus();
-    };
+    }else{
+        bouncefix.add('html');
+    }
 });
 jQuery.fn.capitalize = function() {
     return $(this).each(function(a, b) {

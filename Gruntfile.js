@@ -167,7 +167,8 @@ module.exports = function (grunt) {
                   separator: ';'
                 },
                 src: [
-                    '<%= trado_promo.app %>/components/ajaxchimp/jquery.ajaxchimp.js'
+                    '<%= trado_promo.app %>/components/ajaxchimp/jquery.ajaxchimp.js',
+                    '<%= trado_promo.app %>/components/bouncefix.js/dist/bouncefix.js'
                 ],
                 dest: '<%= trado_promo.app %>/js/trado-promo.js',
             },
