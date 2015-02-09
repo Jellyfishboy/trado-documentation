@@ -76,6 +76,21 @@
                 right:-90px;
             }
         }
+
+        #dev-business
+        {
+            img
+            {
+                &.tablet
+                {
+                    display: block !important;
+                }
+                &:not(.tablet)
+                {
+                    display: none;
+                }
+            }
+        }
     }
 }
 @media handheld, only screen and (max-width: 880px) 
@@ -162,6 +177,22 @@
             .content-section
             {
                 margin-bottom: 0 !important;
+            }
+        }
+
+        #dev-business
+        {
+            img
+            {
+                &.tablet
+                {
+                    display: none !important;
+                }
+
+                &:not(.tablet)
+                {
+                    display: inline-block;
+                }
             }
         }
 

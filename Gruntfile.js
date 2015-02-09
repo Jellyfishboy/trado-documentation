@@ -77,6 +77,13 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
+            dist_folder: {
+                files: [{
+                    src: [
+                        '<%= trado_promo.dist %>/*'
+                    ]
+                }]
+            },
             server: {
                 files: [{
                     src: [
@@ -270,5 +277,8 @@ module.exports = function (grunt) {
         'copy:dist',
         'cdnify:dist',
         'htmlbuild:dist'
+    ]);
+    grunt.registerTask('clean-dist', [
+        'clean:dist_folder'
     ]);
 };
