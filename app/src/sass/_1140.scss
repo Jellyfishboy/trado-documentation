@@ -83,8 +83,13 @@ img {
 @media only screen and (max-width: 1023px) {
 
     body {
-        // font-size: 0.8em;
-        // line-height: 1.5em;
+        
+        font-size: 1.4em;
+
+        p
+        {
+            line-height: 1.5em;
+        }
     }
     
 }
@@ -92,10 +97,10 @@ img {
 
 /* Mobile */
 
-@media handheld, only screen and (max-width: 767px) {
+@media handheld, only screen and (max-width: 770px) {
 
     body {
-        // font-size: 16px;
+        font-size: 1.6em;
         -webkit-text-size-adjust: none;
     }
     
