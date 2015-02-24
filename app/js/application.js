@@ -20,8 +20,8 @@ $(document).ready(function() {
     }
     $('[data-ga="true"]').click(function()
     {
-        dataCategory = $(this).attr('data-event-category');
-        dataAction = $(this).attr('data-event-action');
+        var dataCategory    = $(this).attr('data-event-category'),
+            dataAction      = $(this).attr('data-event-action');
         if(dataCategory == '' || dataAction == '')
         {
             return false;
