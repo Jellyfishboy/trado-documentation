@@ -18,6 +18,19 @@ $(document).ready(function() {
     }else{
         bouncefix.add('html');
     }
+    $('[data-ga="true"]').click(function()
+    {
+        dataCategory = $(this).attr('data-event-category');
+        dataAction = $(this).attr('data-event-action');
+        if(dataCategory == '' || dataAction == '')
+        {
+            return false;
+        }
+        else
+        {
+            ga("send", "event", dataCategory, dataAction);
+        }
+    });
 });
 jQuery.fn.capitalize = function() {
     return $(this).each(function(a, b) {
