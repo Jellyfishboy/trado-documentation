@@ -4,10 +4,17 @@ header
     padding:30px 0;
     font-size:1.4em;
     position: relative;
-    z-index:1;
+    z-index:2;
+    overflow: hidden;
 
     img
     {
         height:60px;
+    }
+
+    a
+    {
+        border: 2px solid rgba(57,181,74,0.5) !important;
+        float:right;
     }
 }

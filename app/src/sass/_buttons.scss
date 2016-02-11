@@ -1,19 +1,37 @@
-.btn
+.call-to-action
 {
-    background:$green;
+    border: 1px solid rgba(57,181,74,0.5);
+    @include border-radius(4px);
+    padding:10px 15px;
     text-transform: uppercase;
-    padding:12px 24px;
-    font-family: "museo-sans",sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    border-color: $dark-green;
-    color: #fff;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    outline:none;
+    display: inline-block;
 
     &:hover
     {
-        background: none;
-        color: $dark-green;
-        border-color: $dark-green;
+        text-decoration: none;
+    }
+}
+.cta-bold
+{
+    color:#fff;
+    background-color: $green;
+
+    &:hover
+    {
+        background-color: $dark-green;
+        color:#fff;
+    }
+}
+.cta-faded
+{   
+    color: $green;
+    background: none;
+
+    &:hover
+    {
+        background: $green;
+        color: #fff;
     }
 }

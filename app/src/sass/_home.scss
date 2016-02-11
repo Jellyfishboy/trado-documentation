@@ -167,6 +167,7 @@
     {
         min-height: 400px;
         position: relative;
+        overflow: hidden;
 
         img
         {
@@ -184,6 +185,20 @@
             {
                 text-align: left;
             }
+        }
+    }
+
+    #hire-me-background
+    {
+        background: image-url('hire-me.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+        height:400px;
+
+        h2
+        {
+            margin-top:80px;
         }
     }
 
