@@ -155,7 +155,7 @@ module.exports = function (grunt) {
                 outputStyle: 'nested',
                 imagesDir: '<%= trado_promo.app %>/img',
                 imagesPath: '<%= trado_promo.app %>/img',
-                httpGeneratedImagesPath: 'http://cdn1.trad.io/trado-promo/assets/img',
+                httpGeneratedImagesPath: 'http://cdn1.trado.io/trado-promo/assets/img',
                 httpImagesPath: 'http://cdn1.trado.io/trado-promo/assets/img',
                 // httpImagesPath: '/img',
                 relative_assets: false
