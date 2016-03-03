@@ -70,6 +70,7 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '<%= trado_promo.app %>/*.html',
+                        '<%= trado_promo.app %>/sitemap.xml',
                         '<%= trado_promo.app %>/css',
                         '<%= trado_promo.app %>/js/trado-promo.js',
                         '<%= trado_promo.dist %>/*',
@@ -88,6 +89,7 @@ module.exports = function (grunt) {
                 files: [{
                     src: [
                         '<%= trado_promo.app %>/*.html',
+                        '<%= trado_promo.app %>/sitemap.xml',
                         '<%= trado_promo.app %>/css',
                         '<%= trado_promo.app %>/js/trado-promo.js',
                         '<%= trado_promo.dist %>/*'
@@ -112,7 +114,8 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt}',
                         '*.html',
-                        'img/*'
+                        'img/*',
+                        'sitemap.xml'
                     ]
                 }]
             },
@@ -157,7 +160,6 @@ module.exports = function (grunt) {
                 imagesPath: '<%= trado_promo.app %>/img',
                 httpGeneratedImagesPath: 'http://cdn1.trado.io/trado-promo/assets/img',
                 httpImagesPath: 'http://cdn1.trado.io/trado-promo/assets/img',
-                // httpImagesPath: '/img',
                 relative_assets: false
             },
             dist: {
@@ -208,7 +210,16 @@ module.exports = function (grunt) {
             options: {
                 layout: "app/layouts/application.hbs",
                 partials: "app/partials/**/*.hbs",
-                flatten: true
+                flatten: true,
+                plugins: ['grunt-assemble-sitemap'],
+                sitemap: {
+                    homepage: 'http://www.trado.io',
+                    changefreq: 'weekly',
+                    priority: '1',
+                    exclude: ['50x'],
+                    robot: false,
+                    relativedest: true
+                }
             },
             pages: {
                 files: {

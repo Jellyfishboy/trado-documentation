@@ -4,5 +4,6 @@ app/css/*
 .sass-cache
 dist
 app/*.html
+app/sitemap.xml
 app/js/trado-promo.js
 *.DS_Store
