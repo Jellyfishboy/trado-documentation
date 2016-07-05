@@ -37,7 +37,7 @@ module.exports = function (grunt) {
                 tasks: ['compass:server', 'concat:stylesheets']
             },
             assemble: {
-                files: ['<%= trado_promo.app %>/layouts/*.hbs', 'app/pages/*.hbs', 'app/partials/**/*.hbs'],
+                files: ['<%= trado_promo.app %>/layouts/*.hbs', 'app/pages/{,*/}*.hbs', 'app/partials/**/*.hbs'],
                 tasks: ['assemble']
             },
             // img: {
@@ -208,7 +208,7 @@ module.exports = function (grunt) {
         },
         assemble: {
             options: {
-                layout: "app/layouts/application.hbs",
+                layoutdir: "app/layouts",
                 partials: "app/partials/**/*.hbs",
                 flatten: true,
                 plugins: ['grunt-assemble-sitemap'],
@@ -219,12 +219,21 @@ module.exports = function (grunt) {
                     exclude: ['50x'],
                     robot: false,
                     relativedest: true
-                }
+                },
             },
-            pages: {
-                files: {
-                    'app/': ['app/pages/*.hbs']
-                }
+            application: {
+                options: {
+                    layout: 'application.hbs'
+                },
+                src: ['app/pages/application/*.hbs'],
+                dest: 'app/.'
+            },
+            home: {
+                options: {
+                    layout: 'home.hbs'
+                },
+                src: ['app/pages/home/*.hbs'],
+                dest: 'app/.'
             }
         },
         cssmin: {
@@ -267,7 +276,8 @@ module.exports = function (grunt) {
             'compass:server',
             'concat:javascripts',
             'concat:stylesheets',
-            'assemble',
+            'assemble:application',
+            'assemble:home',
             'connect:livereload',
             'open',
             'watch'
@@ -278,7 +288,8 @@ module.exports = function (grunt) {
         'compass:dist',
         'concat:javascripts',
         'concat:stylesheets',
-        'assemble',
+        'assemble:application',
+        'assemble:home',
         'copy:styles',
         'cssmin',
         'copy:javascripts',
