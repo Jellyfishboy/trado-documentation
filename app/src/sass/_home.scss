@@ -51,6 +51,17 @@
     {
         line-height: 1.5em;
     }
+    .call-to-action
+    {
+        font-size: 1.4em;
+        @include opacity(0.9);
+        border-width: 2px;
+
+        &.cta-green
+        {
+            margin-right:20px;
+        }
+    }
 }   
 
 #content
