@@ -177,7 +177,8 @@ module.exports = function (grunt) {
                 },
                 src: [
                     '<%= trado_promo.app %>/components/ajaxchimp/jquery.ajaxchimp.js',
-                    '<%= trado_promo.app %>/components/bouncefix.js/dist/bouncefix.js'
+                    '<%= trado_promo.app %>/components/bouncefix.js/dist/bouncefix.js',
+                    '<%= trado_promo.app %>/components/theia-sticky-sidebar/js/theia-sticky-sidebar.js'
                 ],
                 dest: '<%= trado_promo.app %>/js/trado-promo.js',
             },

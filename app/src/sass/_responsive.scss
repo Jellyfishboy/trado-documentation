@@ -48,6 +48,17 @@
 {
     body
     {
+        #documentation
+        {
+            .content
+            {
+                width: 100%;
+            } 
+            .sidebar
+            {
+                display: none;
+            }
+        }
         .content-section
         {
             h2
@@ -125,6 +136,19 @@
 {
     body
     {
+        #hero.hero-documentation
+        {
+            text-align: center;
+
+            h1
+            {
+                margin: 0 auto 10px;
+            }
+            h2
+            {
+                margin: 0 auto;
+            }
+        }
         #hero
         {
             h1
@@ -242,6 +266,24 @@
 {
     body
     {
+        header
+        {
+            #application-header
+            {
+                ul
+                {
+                    li
+                    {
+                        margin-right: 10px;
+
+                        &:last-child
+                        {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
         form
         {
             input[type="text"], input[type="email"]

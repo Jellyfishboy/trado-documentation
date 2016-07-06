@@ -46,3 +46,7 @@ jQuery.fn.capitalize = function() {
     }), this
 };
 $(".first-name").capitalize();
+$('#documentation .content, #documentation .sidebar').theiaStickySidebar(
+{
+    additionalMarginTop: 30
+});
