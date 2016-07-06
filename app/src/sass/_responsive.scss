@@ -262,10 +262,30 @@
         }
     }
 }
+@media handheld, only screen and (max-width: 685px) 
+{
+    body
+    {
+        #documentation
+        {
+            ul, ol
+            {
+                padding-left:30px;
+            }
+        }
+    }
+}
 @media handheld, only screen and (max-width: 605px) 
 {
     body
     {
+        #documentation
+        {
+            ul, ol
+            {
+                padding-left:15px;
+            }
+        }
         header
         {
             #application-header
