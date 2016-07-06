@@ -12,9 +12,99 @@
                     <h3 id="overview">Overview</h3>
                     <p>Trado is a lightweight, easy to use ecommerce platform; designed to allow developers to quickly deploy a premium ecommerce store for their business. Within minutes you can have your very own online store up and running with all the latest features and technology such as Google Analytics and Merchants, PayPal, Stripe and much more.</p>
                     <h3 id="quick-setup">Quick Setup</h3>
-                    <p>Quick overview of setting up the application on your local environment.</p>
+                    <p>In order to get started quickly, we have created a simple walkthrough of how to set up the Trado platform on your local machine. This will enable you to begin using the application and all of the features it offers. If you would like to enable additional features such as PayPal, Stripe or Google Merchants, please navigate to the modules documentation.</p>
+                    <ol>
+                        <li>
+                            <p>The first step is to clone the repository to your local machine:</p>
+<pre><code class="sh">
+    git clone git@github.com:Jellyfishboy/trado.git
+    
+</code></pre>
+                        </li>
+                        <li>
+                            <p>Navigate to the project root folder and install the gem dependencies:</p>
+<pre><code class="sh">
+    cd /Users/myuser/projects/trado
+
+    bundle install
+
+</code></pre>
+                        </li>
+                        <li>
+                            <p>Create your custom <i>secrets.yml</i> from the example supplied on the config directory, <i>secrets.example.yml</i>:</p>
+<pre><code class="ruby">    
+    development:
+        global_host: localhost:3000
+        secret_token: wkqndbdnwdjnq
+        secret_key_base: wkqndbdnwdjnq
+        mailer_server: smtp.example.com
+        mailer_port: 587
+        mailer_domain: localhost:3000
+        mailer_user_name: me@example.com
+        mailer_password: wkqndbdnwdjnq
+        aws_s3_id: wkqndbdnwdjnq
+        aws_s3_key: wkqndbdnwdjnq
+        aws_s3_bucket: example-bucket
+        aws_s3_region: eu-region-1
+        aws_cloudfront_host_carrierwave: http://cdn1.example.com
+        aws_cloudfront_host_app: http://cdn%d.example.com
+        aws_cloudfront_prefix: /assets
+        sitemap_host: http://www.example.com
+        rollbar_access_token: wkqndbdnwdjnq
+        email_root: http://cdn0.example.com/email
+
+</code></pre>
+                        </li>
+                        <li>
+                            <p>Amend the <i>database.yml</i> configuration file to use either MySQL or PostgreSQL:</p> 
+<pre><code class="ruby">
+    # PostgreSQL
+    development:
+        adapter: postgresql
+        encoding: unicode
+        database: trado_dev
+        pool: 5
+        username: tomdallimore
+        password:
+
+    # MySQL
+    development:
+        adapter: mysql2
+        encoding: utf8
+        database: trado_dev
+        pool: 30
+        username: root
+        password: 
+
+</code></pre>       
+                        </li>
+                        <li>
+                            <p>Create database, set schema and install seeds with the custom Trado rake command:</p>
+<pre><code class="sh">
+    bundle exec rake trado:install
+
+</code></pre>
+                        </li>
+                        <li>
+                            <p>Lastly, you can start up the application using the preconfigured Procfile:
+<pre><code class="sh">
+    foreman start -f Procfile.dev
+
+</code></pre>
+                        </li>
+                    </ol>
+
+                    <h3 id="dependencies">Dependencies</h3>
+                    <p>Apart from the standard dependencies required to run Ruby on Rails applications, you will also need to install some third party libraries in order to utilise all the features in the Trado platform.</p>
+                    <ul>
+                        <li><b>Memcached</b>: Caching server</li>
+                        <li><b>PhantomJS</b>: Headless WebKit for Rspec test suite</li>
+                        <li><b>ImageMagick</b>: Image processing engine</li>
+                    </ul>
+                    <p>If you require support installing these dependencies, please feel free to reach out to <a href="#community">our community</a>.</p>
+                    <h3 id="modules">Modules</h3>
                     <h3 id="demo">Demo</h3>
-                    <p>You can take a look and see how the Trado platform works by navigating to our <a href="http://demo.trado.io" data-ga="true" data-event-category="demo" data-event-action="getting-started" target="_blank">live demo</a>. Here you can do everything which is available in the latest build apart from payment functionality such as PayPal and Stripe, which has been turned off. The credentials for the administration area is the following:</p>
+                    <p>You can take a look and see how the Trado platform works by navigating to our <a href="http://demo.trado.io" data-ga="true" data-event-category="demo" data-event-action="getting-started" target="_blank">live demo</a>. Here you can do everything which is available in the latest build, apart from payment functionality such as PayPal and Stripe. The credentials for the administration area is the following:</p>
                     <ul>
                         <li><b>URL</b>: <a href="http://demo.trado.io/admin" target="_blank" data-ga="true" data-event-category="demo-admin" data-event-action="getting-started" target="_blank">demo.trado.io/admin</a></li>
                         <li><b>Username</b>: admin@example.com</li>
@@ -22,7 +112,7 @@
                     </ul>
                     <p><i>Please note, the database on the live demo is reset every 24 hours.</i></p>
                     <h3 id="community">Community</h3>
-                    <p>Stay up to date on the development of Trado and reach out to the community with these helpful resources.</p>
+                    <p>Stay up to date on the development of Trado and reach out to the community with these helpful resources:</p>
                     <ul>
                         <li>Join our Slack Team to contribute and receive support (send your email to <a href="mailto:me@tomdallimore.com">me@tomdallimore.com</a> for an invitation)</li>
                         <li>Join our public <a href="https://groups.google.com/forum/#!forum/trado-ecommerce-platform" target="_blank">Google Group</a></li>
@@ -64,6 +154,8 @@
                     <ul id="anchor-menu">
                         <li><a href="#overview">Overview</a></li>
                         <li><a href="#quick-setup">Quick Setup</a></li>
+                        <li><a href="#dependencies">Dependencies</a></li>
+                        <li><a href="#modules">Modules</a></li>
                         <li><a href="#demo">Demo</a></li>
                         <li><a href="#community">Community</a></li>
                         <li><a href="#licence">Licence</a></li>

@@ -29,10 +29,18 @@
         margin:40px 0 20px;
     }
 
+    ol
+    {
+        padding-left:60px;
+        margin-bottom: 20px;
+        margin-top:15px;
+    }
+
     ul
     {
         padding-left:60px;
         margin-bottom: 20px;
+        margin-top:15px;
 
         li
         {
@@ -68,6 +76,20 @@
                     text-decoration: underline;
                 }
             }
+        }
+    }
+
+    pre
+    {
+        font-family: monospace, monospace !important;
+        padding:0;
+        // white-space:normal;
+        @include border-radius(0px);
+
+        .hljs
+        {
+            font-family: monospace, monospace !important;
+            padding:0;
         }
     }
 }
