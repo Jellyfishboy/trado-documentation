@@ -53,9 +53,9 @@
     }
     .call-to-action
     {
-        font-size: 1.3em;
-        @include opacity(0.9);
+        font-size: 1.2em;
         border-width: 2px;
+        padding: 10px 30px;
 
         &.cta-green
         {
