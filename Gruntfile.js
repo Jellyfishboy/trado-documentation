@@ -265,7 +265,7 @@ module.exports = function (grunt) {
         },
         htmlbuild: {
             dist: {
-                src: '<%= trado_promo.dist %>/index.html',
+                src: '<%= trado_promo.dist %>/*.html',
                 dest: '<%= trado_promo.dist %>/'
             }
         }
