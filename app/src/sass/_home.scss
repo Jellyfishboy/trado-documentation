@@ -125,6 +125,7 @@
         background: image-url('cms-slide.png');
         background-repeat: no-repeat;
         background-position: right center;
+        background-size: auto 400px;
         min-height: 400px;
         margin-bottom:50px;
         @include transition-property(background-position);
@@ -147,6 +148,7 @@
         background: image-url('gmap.png');
         background-repeat: no-repeat;
         background-position: center left;
+        background-size: cover;
         min-height: 400px;
         margin-bottom:50px;
         @include transition-property(background);
@@ -170,6 +172,7 @@
         background: image-url('gmap-mobile.jpg');
         background-repeat: no-repeat;
         background-position: center;
+        background-size:cover;
         height:300px;
         margin-top:15px;
     }
@@ -227,6 +230,7 @@
         background: image-url('theme-mobile.png');
         background-repeat: no-repeat;
         background-position: center;
+        background-size:cover;
         height:365px;
     }
 

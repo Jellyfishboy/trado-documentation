@@ -20,6 +20,7 @@
                 position: absolute;
                 right:20px;
                 bottom:0px;
+                height: 100%;
             }
         }
     }
@@ -41,6 +42,7 @@
         #delivery-background
         {
             background: image-url('gmap-tablet.png') !important;
+            background-size:cover !important;
         }
     }
 }
