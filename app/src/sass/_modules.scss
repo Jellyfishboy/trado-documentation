@@ -1,0 +1,61 @@
+.module-documentation
+{
+    .content
+    {
+        a
+        {
+            color: #fff !important;
+        }
+        h3
+        {
+            padding-top:40px;
+            border-top: 1px solid #ccc;
+
+            &:first-child
+            {
+                padding:0;
+                border-top:none;
+            }
+        }
+        p
+        {
+            margin-bottom:30px;
+        }
+    
+        .sixcol
+        {
+            padding:0;
+        }
+
+        .yt-container
+        {
+            position: relative;
+            height:300px;
+            
+
+            iframe, object, embed
+            {
+                width:100%;
+                height:100%;
+                position: absolute;
+            }
+
+            .coming-soon
+            {
+                text-align: center;
+                line-height:298px;
+                font-size:25px;
+                @include opacity(0.5);
+                border: 1px solid #ccc;
+            }
+        }
+
+        .module-actions
+        {
+            a
+            {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
