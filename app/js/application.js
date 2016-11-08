@@ -33,7 +33,7 @@ $(document).ready(function() {
     });
     $('#menu').slicknav({
         label: "",
-        brand: "<img src=\"img/cropped.png\" height=\"100\">"
+        brand: "<img src=\"http://cdn0.trado.io/trado-promo/assets/img/cropped.png\" height=\"100\">"
     });
 });
 jQuery.fn.capitalize = function() {
