@@ -178,6 +178,7 @@ module.exports = function (grunt) {
                 src: [
                     '<%= trado_promo.app %>/components/ajaxchimp/jquery.ajaxchimp.js',
                     '<%= trado_promo.app %>/components/bouncefix.js/dist/bouncefix.js',
+                    '<%= trado_promo.app %>/components/slicknav/dist/jquery.slicknav.js',
                     '<%= trado_promo.app %>/components/theia-sticky-sidebar/js/theia-sticky-sidebar.js'
                 ],
                 dest: '<%= trado_promo.app %>/js/trado-promo.js',
@@ -190,6 +191,7 @@ module.exports = function (grunt) {
                     '<%= trado_promo.app %>/components/normalize-css/normalize.css',
                     '<%= trado_promo.app %>/components/bootstrap/dist/css/bootstrap.min.css',
                     '<%= trado_promo.app %>/components/font-awesome/css/font-awesome.min.css',
+                    '<%= trado_promo.app %>/components/slicknav/dist/slicknav.css',
                     '<%= trado_promo.app %>/css/trado-promo.css'
                 ],
                 dest: '<%= trado_promo.app %>/css/trado-promo.css'

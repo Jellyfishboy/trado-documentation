@@ -21,6 +21,7 @@
     "ajaxchimp": "~1.3.0",
     "font-awesome": "~4.2.0",
     "bouncefix.js": "~0.3.0",
-    "theia-sticky-sidebar": "~1.2.0"
+    "theia-sticky-sidebar": "~1.2.0",
+    "slicknav": "^1.0.10"
   }
 }

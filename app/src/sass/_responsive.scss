@@ -136,6 +136,19 @@
 }
 @media handheld, only screen and (max-width: 770px) 
 {
+    header
+    {
+        display: none;
+    }
+    .js #menu 
+    {
+        display:none;
+    }
+    
+    .js .slicknav_menu 
+    {
+        display:block;
+    }
     body
     {
         #hero.hero-documentation

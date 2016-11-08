@@ -65,3 +65,79 @@ header
         }
     }
 }
+.slicknav_menu 
+{
+    display:none;
+    min-height: 120px;
+    padding: 30px 0;
+    background: none;
+
+    .slicknav_brand
+    {
+        padding:0 12px;
+        height:auto;
+
+        img
+        {
+            height:60px;
+            display: block;
+        }
+    }
+    .slicknav_btn
+    {
+        background:none;
+        margin: 10px 12px;
+        padding: 0;
+        height: 40px;
+        width: 40px;
+        outline: none;
+        border: none;
+
+        .slicknav_icon
+        {
+            margin:0;
+            height:100%;
+            width:100%;
+
+            .slicknav_icon-bar
+            {
+                margin-top:8px;
+                background-color: $dark-blue;
+                @include border-radius(2px);
+                @include opacity(0.9);
+                -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0);
+                -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0);
+                box-shadow: 0 1px 0 rgba(0, 0, 0, 0);
+                width:40px;
+                height:8px;
+
+                &:first-child
+                {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    .slicknav_nav
+    {
+        padding-top:30px;
+        
+        li
+        {
+            a
+            {
+                color: $dark-blue;
+                outline: none;
+                border: none;
+
+                &:hover
+                {
+                    color: $dark-blue;
+                    text-decoration: underline;
+                    background: none;
+                    @include border-radius(0);
+                }
+            }
+        }
+    }
+}

@@ -31,6 +31,10 @@ $(document).ready(function() {
             ga("send", "event", dataCategory, dataAction);
         }
     });
+    $('#menu').slicknav({
+        label: "",
+        brand: "<img src=\"img/cropped.png\" height=\"100\">"
+    });
 });
 jQuery.fn.capitalize = function() {
     return $(this).each(function(a, b) {
