@@ -1,6 +1,8 @@
 <div id="contactLightbox" class="lightbox">
     <h3>Get in contact</h3>
     <form id="sendingContactMessage" method="post">
+        <div id="errors">
+        </div>
         <label>Name</label>
         <input type="text" name="from_name" />
         <label>Email</label>
@@ -10,8 +12,6 @@
         {{!-- 
         <script src="https://www.google.com/recaptcha/api.js"></script>
         <div class="g-recaptcha" data-sitekey="6Lfj4AwUAAAAAIiUpEnxauXlknxDVYWS_dbWYxCg"></div> --}}
-
-        <br><br>
         <button class="cta-bold cta-green cta-block call-to-action">
             Send
         </button>

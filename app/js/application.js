@@ -3,12 +3,10 @@ function ajaxChimpCallback(a) {
 };
 function sendContactMessage() 
 {
-    // var myform = $("form#sendingContactMessage");
     $('body').on('submit', 'form#sendingContactMessage', function(event){
-    // myform.submit(function(event){
         event.preventDefault();
+        $('#errors').html('');
 
-        // Change to your service ID, or keep using the default service
         var myform = $(this),
             service_id = "default_service",
             template_id = "trado_contact_message",
@@ -26,7 +24,7 @@ function sendContactMessage()
             currentModal.close();
             myform.find("button").text("Send");
         }, function(err) {
-            alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+            myform.find("#errors").append('<p>' + JSON.parse(err.text).service_error + '</p>');
             myform.find("button").text("Send");
         });
       return false;

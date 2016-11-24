@@ -37,8 +37,25 @@
 
             button
             {
+                margin-top: 20px;
                 width:100%;
             }
+
+            #errors
+            {
+                color: $red;
+            }
         }
+    }
+}
+form#sendingContactMessage
+{
+    label
+    {
+        display: block;
+    }
+    input, textarea
+    {
+        width: 450px;
     }
 }
