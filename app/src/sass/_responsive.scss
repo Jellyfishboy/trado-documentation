@@ -282,6 +282,16 @@
                 margin-bottom:30px;
             }
         }
+        .deploy-documentation
+        {
+            .content
+            {
+                .sixcol.last
+                {
+                    text-align: left;
+                }
+            }
+        }
     }
 }
 @media handheld, only screen and (max-width: 685px) 
