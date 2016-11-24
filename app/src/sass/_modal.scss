@@ -1,0 +1,44 @@
+.featherlight
+{
+    .featherlight-content
+    {
+        background-color: #F0F0F0;
+        padding: 25px 50px 25px;
+        
+        .featherlight-close-icon
+        {
+            top:2px;
+            right:2px;
+        }
+
+        h3
+        {
+            color: $dark-blue;
+            margin:20px 0;
+        }
+
+        form
+        {
+            input, textarea
+            {
+                margin-right: 0;
+                text-transform: inherit;
+            }
+
+            label
+            {
+                margin:20px 0 10px;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 0.9em;
+                color:#333;
+                font-family: "museo-sans",sans-serif;
+            }
+
+            button
+            {
+                width:100%;
+            }
+        }
+    }
+}

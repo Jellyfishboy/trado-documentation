@@ -12,6 +12,7 @@ function sendContactMessage()
         var myform = $(this),
             service_id = "default_service",
             template_id = "trado_contact_message",
+            currentModal = $.featherlight.current();
             params = myform.serializeArray().reduce(function(obj, item) {
             obj[item.name] = item.value;
             return obj;
@@ -22,6 +23,7 @@ function sendContactMessage()
       emailjs.send(service_id,template_id,params)
         .then(function(){ 
             alert("Sent!");
+            currentModal.close();
             myform.find("button").text("Send");
         }, function(err) {
             alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));

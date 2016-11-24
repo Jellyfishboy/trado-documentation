@@ -1,6 +1,6 @@
 form
 {
-    input[type="text"], input[type="email"]
+    input[type="text"], input[type="email"], textarea
     {
         background: rgba(168,214,255,0.1);
         outline:none;
@@ -19,6 +19,10 @@ form
         {
             background: rgba(255,255,255,1);
         }
+    }
+    textarea
+    {
+        resize:none;
     }
     button
     {
@@ -78,4 +82,15 @@ form
 .beta-request
 {
     margin-bottom: 40px;
+}
+form#sendingContactMessage
+{
+    label
+    {
+        display: block;
+    }
+    input, textarea
+    {
+        width: 350px;
+    }
 }
