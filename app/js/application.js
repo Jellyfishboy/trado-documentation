@@ -1,7 +1,39 @@
 function ajaxChimpCallback(a) {
     "success" === a.result ? ($(".beta-request-result").show(), $(".beta-request-form").hide(), $(".beta-request-title").hide()) : (a.msg.indexOf("already subscribed") >= 0 ? ($(".beta-request-form").hide(), $(".beta-request-title").hide(), $(".beta-request-already-subscribed").show()) : $(".beta-request-error").show(), $(".beta-request-btn").html("Invite me"))
 };
+function sendContactMessage() 
+{
+    // var myform = $("form#sendingContactMessage");
+    $('body').on('submit', 'form#sendingContactMessage', function(event){
+    // myform.submit(function(event){
+        event.preventDefault();
+
+        // Change to your service ID, or keep using the default service
+        var myform = $(this),
+            service_id = "default_service",
+            template_id = "trado_contact_message",
+            params = myform.serializeArray().reduce(function(obj, item) {
+            obj[item.name] = item.value;
+            return obj;
+        }, {});
+
+
+      myform.find("button").text("Sending...");
+      emailjs.send(service_id,template_id,params)
+        .then(function(){ 
+            alert("Sent!");
+            myform.find("button").text("Send");
+        }, function(err) {
+            alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+            myform.find("button").text("Send");
+        });
+      return false;
+    });
+}
 $(document).ready(function() {
+
+    sendContactMessage();
+
     $(".beta-request-form").ajaxChimp({
         url: "http://tomdallimore.us9.list-manage.com/subscribe/post?u=b141eef8b30b7dc5813bd752a&amp;id=95c7eadbb9",
         callback: ajaxChimpCallback
