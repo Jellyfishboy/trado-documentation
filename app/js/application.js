@@ -79,58 +79,6 @@ function sendContactMessage()
                 });
         }
     });
-    // $('body').on('submit', 'form#sendingContactMessage', function(event){
-    //     // myform.submit(function(event){
-    //     event.preventDefault();
-    //     $('#errors').html('');
-
-    //     var myform = $(this),
-    //         service_id = "default_service",
-    //         template_id = "trado_contact_message",
-    //         currentModal = $.featherlight.current();
-    //         params = myform.serializeArray().reduce(function(obj, item) {
-    //         obj[item.name] = item.value;
-    //         return obj;
-    //     }, {});
-
-    //     myform.validate({
-    //         // Specify validation rules
-    //         rules: {
-    //             // The key name on the left side is the name attribute
-    //             // of an input field. Validation rules are defined
-    //             // on the right side
-    //             from_name: "required",
-    //             from_email: {
-    //                 required: true,
-    //                 // Specify that email should be validated
-    //                 // by the built-in "email" rule
-    //                 email: true
-    //             },
-    //             message: "required"
-    //         },  
-    //         // Specify validation error messages
-    //         messages: {
-    //             from_name: "Please enter your name",
-    //             from_email: "Please enter a valid email address",
-    //             message: "Please enter a message."
-    //         },
-    //         // Make sure the form is submitted to the destination defined
-    //         // in the "action" attribute of the form when valid
-    //         submitHandler: function(form) {
-    //             form.find("button").text("Sending...");
-    //             emailjs.send(service_id,template_id,params)
-    //             .then(function(){ 
-    //                 alert("Sent!");
-    //                 currentModal.close();
-    //                 form.find("button").text("Send");
-    //             }, function(err) {
-    //                 form.find("#errors").append('<p>' + JSON.parse(err.text).service_error + '</p>');
-    //                 form.find("button").text("Send");
-    //             });
-    //         }
-    //     });
-    //     return false;
-    // });
 }
 $(document).ready(function() {
 
