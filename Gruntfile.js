@@ -180,7 +180,8 @@ module.exports = function (grunt) {
                     '<%= trado_promo.app %>/components/bouncefix.js/dist/bouncefix.js',
                     '<%= trado_promo.app %>/components/slicknav/dist/jquery.slicknav.js',
                     '<%= trado_promo.app %>/components/theia-sticky-sidebar/js/theia-sticky-sidebar.js',
-                    '<%= trado_promo.app %>/components/featherlight/release/featherlight.min.js'
+                    '<%= trado_promo.app %>/components/featherlight/release/featherlight.min.js',
+                    '<%= trado_promo.app %>/components/jquery-validation/dist/jquery.validate.min.js'
                 ],
                 dest: '<%= trado_promo.app %>/js/trado-promo.js',
             },

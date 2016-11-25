@@ -7,8 +7,9 @@
         
         .featherlight-close-icon
         {
-            top:2px;
-            right:2px;
+            top:5px;
+            right:5px;
+            background-color: #F0F0F0;
         }
 
         h3
@@ -33,6 +34,13 @@
                 font-size: 0.9em;
                 color:#333;
                 font-family: "museo-sans",sans-serif;
+
+                &.error
+                {
+                    margin:1px 0 0;
+                    color: $red;
+                    font-size: 0.8em;
+                }
             }
 
             button
@@ -48,7 +56,7 @@
         }
     }
 }
-form#sendingContactMessage
+form.sendingContactMessage
 {
     label
     {
