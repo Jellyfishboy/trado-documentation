@@ -10,6 +10,7 @@
             top:5px;
             right:5px;
             background-color: #F0F0F0;
+            outline:0;
         }
 
         h3
@@ -39,7 +40,7 @@
                 {
                     margin:1px 0 0;
                     color: $red;
-                    font-size: 0.8em;
+                    font-size: 0.85em;
                 }
             }
 
@@ -52,6 +53,10 @@
             #errors
             {
                 color: $red;
+            }
+            #success
+            {
+                color: $dark-green;
             }
         }
     }

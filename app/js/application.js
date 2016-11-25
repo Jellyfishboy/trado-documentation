@@ -4,57 +4,71 @@ function ajaxChimpCallback(a) {
 function featherlightConfig()
 {
     var configuration = ({
-        afterContent: function(event)
+        afterOpen: function(event)
         {
+            $('body').toggleClass('body-open-modal');
             sendContactMessage();
+        },
+        afterClose: function(event)
+        {
+            $('body').toggleClass('body-open-modal');
         }
     })
-    $('.open-contact-form').click(function()
+    $('.open-contact-form').click(function(event)
     {
+        event.preventDefault();
         $.featherlight('#contactLightbox', configuration);
     });
 }
 function sendContactMessage() 
 {
-    $("form.sendingContactMessage").each(function()
-    {
-        var $form = $(this),
-            service_id = "default_service",
-            template_id = "trado_contact_message",
-            currentModal = $.featherlight.current();
-
-        $form.validate({
-            rules: {
-                from_name: "required",
-                from_email: {
-                    required: true,
-                    email: true
-                },
-                message: "required"
-            },  
-            messages: {
-                from_name: "Please enter your name",
-                from_email: "Please enter a valid email address",
-                message: "Please enter a message."
+    $('.featherlight-content form.sendingContactMessage').validate({
+        rules: {
+            from_name: "required",
+            from_email: {
+                required: true,
+                email: true
             },
-            submitHandler: function(form, event) {
-                var params = $form.serializeArray().reduce(function(obj, item) {
-                        obj[item.name] = item.value;
-                        return obj;
-                    }, {});
-                event.preventDefault();
-                $form.find("button").text("Sending...");
-                emailjs.send(service_id,template_id,params)
+            message: "required"
+        },  
+        messages: {
+            from_name: "Please enter your name",
+            from_email: "Please enter a valid email address",
+            message: "Please enter a message."
+        },
+        submitHandler: function(form, event) {
+            event.preventDefault();
+
+            var $form = $('.featherlight-content form.sendingContactMessage'),
+                service_id = "default_service",
+                template_id = "trado_contact_message",
+                currentModal = $.featherlight.current();
+                params = $form.serializeArray().reduce(function(obj, item) {
+                    obj[item.name] = item.value;
+                    return obj;
+                }, {});
+
+            $form.find('input').prop('disabled', true);
+            $form.find('textarea').prop('disabled', true);
+            $form.find("button").text("Sending...");
+            $('#errors, #success').html('');
+
+            emailjs.send(service_id,template_id,params)
                 .then(function(){ 
-                    alert("Sent!");
-                    currentModal.close();
-                    $form.find("button").text("Send");
+                    $form.find('#success').html('<p>Message has been sent. We will get back to you within 24 hours.</p>');
+                    setTimeout(function(){ 
+                        currentModal.close();
+                        $form.find('input').prop('disabled', false);
+                        $form.find('textarea').prop('disabled', false);
+                        $form.find("button").text("Send"); 
+                    }, 5000);
                 }, function(err) {
-                    $form.find("#errors").append('<p>' + JSON.parse(err.text).service_error + '</p>');
+                    $form.find('input').prop('disabled', false);
+                    $form.find('textarea').prop('disabled', false);
+                    $form.find("#errors").html('<p>' + JSON.parse(err.text).service_error + '</p>');
                     $form.find("button").text("Send");
                 });
-            }
-        });
+        }
     });
     // $('body').on('submit', 'form#sendingContactMessage', function(event){
     //     // myform.submit(function(event){

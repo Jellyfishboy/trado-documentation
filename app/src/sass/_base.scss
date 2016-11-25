@@ -41,6 +41,12 @@ a
     color: $blue;
     text-decoration: none;
     outline: none;
+    user-select:none;
+
+    &:focus
+    {
+        outline: none;
+    }
 
     &:hover
     {
@@ -80,4 +86,14 @@ a
 .lightbox
 {
     display: none;
+}
+body.body-open-modal
+{
+    footer, #content, #hero
+    {
+        -webkit-transform:translateZ(0px);
+        -moz-transform:translateZ(0px);
+        -o-transform:translateZ(0px);
+        transform:translateZ(0px);
+    }
 }
