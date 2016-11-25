@@ -7,6 +7,7 @@ function featherlightConfig()
         afterOpen: function(event)
         {
             $('body').toggleClass('body-open-modal');
+            setModalTabindex();
             sendContactMessage();
         },
         afterClose: function(event)
@@ -19,6 +20,14 @@ function featherlightConfig()
         event.preventDefault();
         $.featherlight('#contactLightbox', configuration);
     });
+}
+function setModalTabindex()
+{
+    var $form = $('.featherlight-content form.sendingContactMessage');
+    $form.find('input[name=from_name]').focus().attr('tabindex', 1);
+    $form.find('input[name=from_email]').attr('tabindex', 2);
+    $form.find('textarea[name=message]').attr('tabindex', 3);
+
 }
 function sendContactMessage() 
 {

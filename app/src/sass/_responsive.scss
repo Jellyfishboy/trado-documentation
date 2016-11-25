@@ -50,6 +50,13 @@
 {
     body
     {
+        #deploy-support
+        {
+            h2,p 
+            {
+                width: 100% !important;
+            }
+        }
         #documentation
         {
             .content
@@ -303,6 +310,22 @@
             ul, ol
             {
                 padding-left:30px;
+            }
+        }
+        .featherlight-content
+        {
+            width: 85%;
+
+            
+            #contactLightbox
+            {
+                min-width: 190px;
+
+                input, textarea
+                {
+                    width: 100%;
+                    min-width:auto;
+                }
             }
         }
     }
