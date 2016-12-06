@@ -79,10 +79,16 @@ function sendContactMessage()
                 });
         }
     });
+},
+function scrollingNavbar() 
+{
+    // height of navbar is 120px
+    $('#home-header').toggleClass('scrolling');
 }
 $(document).ready(function() {
 
     featherlightConfig();
+    scrollingNavbar();
 
     $(".beta-request-form").ajaxChimp({
         url: "http://tomdallimore.us9.list-manage.com/subscribe/post?u=b141eef8b30b7dc5813bd752a&amp;id=95c7eadbb9",
