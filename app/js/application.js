@@ -79,7 +79,7 @@ function sendContactMessage()
                 });
         }
     });
-},
+}
 function scrollingNavbar() 
 {
     // height of navbar is 120px
