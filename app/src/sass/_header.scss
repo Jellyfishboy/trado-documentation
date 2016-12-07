@@ -7,8 +7,8 @@ header
     z-index:2;
     overflow: hidden;
     @include transition-property(padding, height, background-color);
-    @include transition-duration(0.4s);
-    @include transition-timing-function(linear);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-in);
 
     img
     {
@@ -187,4 +187,9 @@ header
             }
         }
     }
+}
+#header-buffer
+{
+    height:120px;
+    display: none;
 }

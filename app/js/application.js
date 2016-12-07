@@ -82,8 +82,21 @@ function sendContactMessage()
 }
 function scrollingNavbar() 
 {
-    // height of navbar is 120px
-    $('#home-header').toggleClass('scrolling');
+    $(window).on('scroll', function() {
+        var y_scroll_pos = window.pageYOffset;
+        var scroll_pos_test = 150;             // set to whatever you want it to be
+
+        if(y_scroll_pos > scroll_pos_test) 
+        {
+            $('header').addClass('scrolling');
+            $('#header-buffer').show();
+        }
+        else
+        {
+            $('header').removeClass('scrolling');
+            $('#header-buffer').hide();
+        }
+    });
 }
 $(document).ready(function() {
 
@@ -140,5 +153,5 @@ jQuery.fn.capitalize = function() {
 $(".first-name").capitalize();
 $('#documentation .content, #documentation .sidebar').theiaStickySidebar(
 {
-    additionalMarginTop: 30
+    additionalMarginTop: 120
 });
