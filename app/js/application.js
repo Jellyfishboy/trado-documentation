@@ -88,14 +88,18 @@ function scrollingNavbar()
 
         if(y_scroll_pos > scroll_pos_test) 
         {
-            $('header').addClass('scrolling');
-            $('#header-buffer').show();
+            $('header.scrolling').fadeIn();
+            $('#home-layout .slicknav_menu').addClass('home-scrolling');
         }
         else
         {
-            $('header').removeClass('scrolling');
-            $('#header-buffer').hide();
+            $('header.scrolling').stop().fadeOut();
+            $('#home-layout .slicknav_menu').removeClass('home-scrolling');
         }
+    });
+    $('.menu').slicknav({
+        label: "",
+        brand: "<a href='/'><img src=\"http://cdn0.trado.io/trado-promo/assets/img/cropped.png\" height=\"100\"></a>"
     });
 }
 $(document).ready(function() {
@@ -131,10 +135,6 @@ $(document).ready(function() {
         {
             ga("send", "event", dataCategory, dataAction);
         }
-    });
-    $('#menu').slicknav({
-        label: "",
-        brand: "<img src=\"http://cdn0.trado.io/trado-promo/assets/img/cropped.png\" height=\"100\">"
     });
 });
 jQuery.fn.capitalize = function() {

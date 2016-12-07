@@ -1,17 +1,26 @@
-<div id="header-buffer"></div>
-<header id="home-header">
+<header class="home-header">
     <div class="container">
         <div class="row">
             <div class="fourcol">
-                <img src="img/cropped.png" height="100"/>{{!-- 
-                <a href="#hire-me-background" data-ga="true" data-event-category="hire-me" data-event-action="header" class="call-to-action cta-faded">Hire me</a> --}}
+                <img src="img/cropped.png" height="100"/>
+            </div>
+            <div class="eightcol last">
+                <ul class="menu">
+                    {{partial 'header_menu_items'}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<header class="home-header scrolling">
+    <div class="container">
+        <div class="row">
+            <div class="fourcol">
+                <img src="img/cropped.png" height="100"/>
             </div>
             <div class="eightcol last">
                 <ul>
-                    <li><a href="/getting-started.html" data-ga="true" data-event-category="getting-started" data-event-action="header">Getting Started</a></li>
-                    <li><a href="/modules.html" data-ga="true" data-event-category="modules" data-event-action="header">Modules</a></li>
-                    <li><a href="/deploy.html" data-ga="true" data-event-category="deploy" data-event-action="header">Deploy</a></li>
-                    <li><a href="http://demo.trado.io" data-ga="true" data-event-category="demo" data-event-action="header" target="_blank">Demo</a></li>
+                    {{partial 'header_menu_items'}}
                 </ul>
             </div>
         </div>

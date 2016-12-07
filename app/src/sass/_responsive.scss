@@ -143,7 +143,11 @@
 }
 @media handheld, only screen and (max-width: 770px) 
 {
-    header:not(#home-header)
+    header.scrolling
+    {
+        display: none !important;
+    }
+    header ul, header img
     {
         display: none;
     }
@@ -347,7 +351,7 @@
         }
         header
         {
-            #application-header
+            .application-header
             {
                 ul
                 {
