@@ -205,6 +205,11 @@ header
         &.home-scrolling
         {
             background: #f0f0f0;
+
+            a.slicknav_btn
+            {
+                display: block;
+            }
         }
     }
 }

@@ -160,6 +160,13 @@
     {
         display:block;
     }
+    #home-layout .slicknav_menu
+    {
+        a.slicknav_btn
+        {
+            display: none;
+        }
+    }
     body
     {
         #hero.hero-documentation
