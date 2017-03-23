@@ -63,3 +63,14 @@
         color: #fff;
     }
 }
+.cta-white-border
+{
+    background: none;
+    border: 1px solid #fff;
+    
+    &:hover
+    {
+        color: $bright-blue !important;
+        background-color: #fff;
+    }
+}

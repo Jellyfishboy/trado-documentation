@@ -15,7 +15,7 @@ function featherlightConfig()
             $('body').toggleClass('body-open-modal');
         }
     })
-    $('.open-contact-form').click(function(event)
+    $('body').on('click', '.open-contact-form', function(event)
     {
         event.preventDefault();
         $.featherlight('#contactLightbox', configuration);
