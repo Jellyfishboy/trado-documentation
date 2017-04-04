@@ -158,8 +158,8 @@ module.exports = function (grunt) {
                 outputStyle: 'nested',
                 imagesDir: '<%= trado_promo.app %>/img',
                 imagesPath: '<%= trado_promo.app %>/img',
-                httpGeneratedImagesPath: 'http://cdn1.trado.io/trado-promo/assets/img',
-                httpImagesPath: 'http://cdn1.trado.io/trado-promo/assets/img',
+                httpGeneratedImagesPath: 'https://dlczmkt02tnnw.cloudfront.net/trado-promo/assets/img',
+                httpImagesPath: 'https://dlczmkt02tnnw.cloudfront.net/trado-promo/assets/img',
                 relative_assets: false
             },
             dist: {
@@ -255,7 +255,7 @@ module.exports = function (grunt) {
         cdnify: {
             dist: {
                 options: {
-                    base: 'http://cdn0.trado.io/trado-promo/assets/',
+                    base: 'https://dlczmkt02tnnw.cloudfront.net/trado-promo/assets/',
                     html: {
                         'link[rel=icon]' : 'href'
                     }
