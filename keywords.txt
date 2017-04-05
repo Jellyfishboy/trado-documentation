@@ -8,7 +8,13 @@ open source projects
 
 FOCUS KEYWORDS
 
+open source platform
 open source software
 ruby on rails
 open source
 ruby on rails tutorial
+online store
+
+Trado is a lightweight, open source ecommerce platform; engineered to allow developers to quickly deploy a premium online store.
+
+An open source platform for your online store built with Ruby on Rails

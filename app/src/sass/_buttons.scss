@@ -68,6 +68,10 @@
     background: none;
     border: 1px solid #fff;
     
+    &:active, &:focus, &:visited
+    {
+        color: #fff;
+    }   
     &:hover
     {
         color: $bright-blue !important;
