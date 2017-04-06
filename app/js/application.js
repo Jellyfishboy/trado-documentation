@@ -99,7 +99,7 @@ function scrollingNavbar()
     });
     $('.menu').slicknav({
         label: "",
-        brand: "<a href='/'><img src=\"http://cdn0.trado.io/trado-promo/assets/img/cropped.png\" height=\"100\"></a>"
+        brand: "<a href='/'><img src=\"https://dlczmkt02tnnw.cloudfront.net/trado-promo/assets/img/cropped.png\" height=\"100\"></a>"
     });
 }
 $(document).ready(function() {
