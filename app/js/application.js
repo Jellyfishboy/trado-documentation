@@ -1,25 +1,34 @@
 function ajaxChimpCallback(a) {
-    "success" === a.result ? ($(".beta-request-result").show(), $(".beta-request-form").hide(), $(".beta-request-title").hide()) : (a.msg.indexOf("already subscribed") >= 0 ? ($(".beta-request-form").hide(), $(".beta-request-title").hide(), $(".beta-request-already-subscribed").show()) : $(".beta-request-error").show(), $(".beta-request-btn").html("Invite me"))
+    if ("success" === a.result) {
+        $(".beta-request-result").show(); 
+        $(".beta-request-form").hide(); 
+        $(".beta-request-title").hide();
+        $.featherlight.current().close();
+    }
+    else
+    {
+        a.msg.indexOf("already subscribed") >= 0 ? ($(".beta-request-form").hide(), $(".beta-request-title").hide(), $(".beta-request-already-subscribed").show()) : $(".beta-request-error").show(), $(".beta-request-btn").html("Invite me")
+    }
 };
 function featherlightConfig()
 {
-    var configuration = ({
-        afterOpen: function(event)
-        {
-            $('body').toggleClass('body-open-modal');
-            setModalTabindex();
-            sendContactMessage();
-        },
-        afterClose: function(event)
-        {
-            $('body').toggleClass('body-open-modal');
-        }
-    })
-    $('body').on('click', '.open-contact-form', function(event)
-    {
-        event.preventDefault();
-        $.featherlight('#contactLightbox', configuration);
-    });
+    // var configuration = ({
+    //     afterOpen: function(event)
+    //     {
+    //         $('body').toggleClass('body-open-modal');
+    //         setModalTabindex();
+    //         sendContactMessage();
+    //     },
+    //     afterClose: function(event)
+    //     {
+    //         $('body').toggleClass('body-open-modal');
+    //     }
+    // });
+    // $('body').on('click', '.open-contact-form', function(event)
+    // {
+    //     event.preventDefault();
+    //     $.featherlight('#contactLightbox', configuration);
+    // });
 }
 function setModalTabindex()
 {
@@ -117,6 +126,11 @@ $(document).ready(function() {
         $(".beta-request-error").hide(); 
         $(".beta-request-already-subscribed").hide();
     });
+    setTimeout( function()
+    {
+        $.featherlight('#newsletterLightbox');
+    }, 15000);
+
     if(!$('html').hasClass('touch'))
     {
         $(".first-name").first().focus();

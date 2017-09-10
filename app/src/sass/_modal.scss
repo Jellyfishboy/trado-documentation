@@ -72,3 +72,21 @@ form.sendingContactMessage
         width: 450px;
     }
 }
+#newsletterLightbox
+{
+    text-align: center;
+
+    .beta-request-form
+    {
+        input
+        {
+            display: block;
+            width: 100%;
+
+            &:first-child
+            {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
