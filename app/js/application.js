@@ -126,9 +126,21 @@ $(document).ready(function() {
         $(".beta-request-error").hide(); 
         $(".beta-request-already-subscribed").hide();
     });
+    var configuration = ({
+        afterOpen: function(event)
+        {
+            $('body').toggleClass('body-open-modal');
+            setModalTabindex();
+            sendContactMessage();
+        },
+        afterClose: function(event)
+        {
+            $('body').toggleClass('body-open-modal');
+        }
+    });
     setTimeout( function()
     {
-        $.featherlight('#newsletterLightbox');
+        $.featherlight('#newsletterLightbox', configuration);
     }, 15000);
 
     if(!$('html').hasClass('touch'))
