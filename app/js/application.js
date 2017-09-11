@@ -10,33 +10,38 @@ function ajaxChimpCallback(a) {
         a.msg.indexOf("already subscribed") >= 0 ? ($(".beta-request-form").hide(), $(".beta-request-title").hide(), $(".beta-request-already-subscribed").show()) : $(".beta-request-error").show(), $(".beta-request-btn").html("Invite me")
     }
 };
-function featherlightConfig()
+function contactLightbox()
 {
-    // var configuration = ({
-    //     afterOpen: function(event)
-    //     {
-    //         $('body').toggleClass('body-open-modal');
-    //         setModalTabindex();
-    //         sendContactMessage();
-    //     },
-    //     afterClose: function(event)
-    //     {
-    //         $('body').toggleClass('body-open-modal');
-    //     }
-    // });
-    // $('body').on('click', '.open-contact-form', function(event)
-    // {
-    //     event.preventDefault();
-    //     $.featherlight('#contactLightbox', configuration);
-    // });
+    var configuration = ({
+        afterOpen: function(event)
+        {
+            $('body').toggleClass('body-open-modal');
+            setContactTabindex();
+            sendContactMessage();
+        },
+        afterClose: function(event)
+        {
+            $('body').toggleClass('body-open-modal');
+        }
+    });
+    $('body').on('click', '.open-contact-form', function(event)
+    {
+        event.preventDefault();
+        $.featherlight('#contactLightbox', configuration);
+    });
 }
-function setModalTabindex()
+function setContactTabindex()
 {
     var $form = $('.featherlight-content form.sendingContactMessage');
     $form.find('input[name=from_name]').focus().attr('tabindex', 1);
     $form.find('input[name=from_email]').attr('tabindex', 2);
     $form.find('textarea[name=message]').attr('tabindex', 3);
-
+}
+function setBetaTabIndex()
+{
+    var $form = $('.beta-request-form');
+    $form.find('.first-name').focus().attr('tabindex', 1);
+    $form.find('.email').attr('tabindex', 2);
 }
 function sendContactMessage() 
 {
@@ -111,11 +116,8 @@ function scrollingNavbar()
         brand: "<a href='/'><img src=\"https://dlczmkt02tnnw.cloudfront.net/trado-promo/assets/img/cropped.png\" height=\"100\"></a>"
     });
 }
-$(document).ready(function() {
-
-    featherlightConfig();
-    scrollingNavbar();
-
+function betaLightbox()
+{
     $(".beta-request-form").ajaxChimp({
         url: "http://tomdallimore.us9.list-manage.com/subscribe/post?u=b141eef8b30b7dc5813bd752a&amp;id=95c7eadbb9",
         callback: ajaxChimpCallback
@@ -126,22 +128,32 @@ $(document).ready(function() {
         $(".beta-request-error").hide(); 
         $(".beta-request-already-subscribed").hide();
     });
-    var configuration = ({
-        afterOpen: function(event)
-        {
-            $('body').toggleClass('body-open-modal');
-            setModalTabindex();
-            sendContactMessage();
-        },
-        afterClose: function(event)
-        {
-            $('body').toggleClass('body-open-modal');
-        }
-    });
-    setTimeout( function()
+    if (!readCookie('tradoPopup'))
     {
-        $.featherlight('#newsletterLightbox', configuration);
-    }, 15000);
+        var configuration = ({
+            afterOpen: function(event)
+            {
+                $('body').toggleClass('body-open-modal');
+                setBetaTabIndex();
+                sendContactMessage();
+            },
+            afterClose: function(event)
+            {
+                $('body').toggleClass('body-open-modal');
+            }
+        });
+        setTimeout( function()
+        {
+            $.featherlight('#newsletterLightbox', configuration);
+            createCookie('tradoPopup','1',1);
+        }, 3000);
+    }
+}
+$(document).ready(function() {
+
+    contactLightbox();
+    betaLightbox();
+    scrollingNavbar();
 
     if(!$('html').hasClass('touch'))
     {
@@ -181,3 +193,25 @@ $('#documentation .content, #documentation .sidebar').theiaStickySidebar(
 {
     additionalMarginTop: 120
 });
+
+// cookies
+function createCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
