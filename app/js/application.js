@@ -119,7 +119,7 @@ function scrollingNavbar()
 function betaLightbox()
 {
     $(".beta-request-form").ajaxChimp({
-        url: "http://tomdallimore.us9.list-manage.com/subscribe/post?u=b141eef8b30b7dc5813bd752a&amp;id=95c7eadbb9",
+        url: "https://tomdallimore.us9.list-manage.com/subscribe/post?u=b141eef8b30b7dc5813bd752a&amp;id=95c7eadbb9",
         callback: ajaxChimpCallback
     }); 
     $(".beta-request-form").submit(function() {
